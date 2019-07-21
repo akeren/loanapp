@@ -6,6 +6,8 @@ const years = document.querySelector('#years');
 const monthlyPayment = document.querySelector('#monthly-payment');
 const totalPayment = document.querySelector('#total-payment');
 const totalInterest = document.querySelector('#total-interest');
+const card = document.querySelector('.card');
+const heading = document.querySelector('.heading');
 
 
 const calculateRessults = (e) => {
@@ -24,10 +26,20 @@ const calculateRessults = (e) => {
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
     } else {
 
-        console.log('All fields are required!');
+        errorMessage('All fields are required!');
     }
 
     e.preventDefault();
+};
+
+const errorMessage = (message) => {
+    // Create a div element, add a class name and append a text node to the div
+    const div = document.createElement('div');
+    div.className = 'alert alert-danger';
+    div.appendChild(document.createTextNode(message));
+
+    // insert error above heading
+    card.insertBefore(div, heading);
 };
 
 
