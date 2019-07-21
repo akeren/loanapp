@@ -8,9 +8,11 @@ const totalPayment = document.querySelector('#total-payment');
 const totalInterest = document.querySelector('#total-interest');
 const card = document.querySelector('.card');
 const heading = document.querySelector('.heading');
+const loader = document.querySelector('#loading');
+const results = document.querySelector('#results');
 
 
-const calculateRessults = (e) => {
+const calculateResults = () => {
 
     const principal = parseFloat(amount.value);
     const calculatedInterest = parseFloat(interest.value) / 100 / 12;
@@ -24,15 +26,21 @@ const calculateRessults = (e) => {
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
-    } else {
 
+        // show results 
+        results.style.display = 'block';
+        // hide loader
+        loader.style.display = 'none';
+    } else {
         errorMessage('All fields are required!');
     }
-
-    e.preventDefault();
 };
 
 const errorMessage = (message) => {
+    // Hide loader and results
+    loader.style.display = 'none';
+    results.style.display = 'none';
+
     // Create a div element, add a class name and append a text node to the div
     const div = document.createElement('div');
     div.className = 'alert alert-danger';
@@ -50,4 +58,13 @@ const clearMessage = () => {
 };
 
 
-loanForm.addEventListener('submit', calculateRessults);
+loanForm.addEventListener('submit', (e) => {
+    // show loader 
+    loader.style.display = 'block';
+    // Hide results
+    results.style.display = 'none';
+
+    setTimeout(calculateResults, 2000);
+
+    e.preventDefault();
+});
