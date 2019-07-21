@@ -12,5 +12,3 @@
 ## Contributions
 
     You can fork the repository and send pull request or reach out to me via twitter => <a href="https://twitter.com/katerakeren">Kater Akeren</a> or email me at [kater@lunetsoft.com]
-
-### Thank you....
