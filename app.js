@@ -40,6 +40,13 @@ const errorMessage = (message) => {
 
     // insert error above heading
     card.insertBefore(div, heading);
+
+    //Clear error message after 3 seconds 
+    setTimeout(clearMessage, 3000);
+};
+
+const clearMessage = () => {
+    document.querySelector('.alert').remove();
 };
 
 
