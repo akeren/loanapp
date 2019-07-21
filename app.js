@@ -26,11 +26,16 @@ const calculateResults = () => {
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
-
         // show results 
         results.style.display = 'block';
         // hide loader
         loader.style.display = 'none';
+
+        // clear the inputs after a successful operation
+        amount.value = '';
+        interest.value = '';
+        years.value = '';
+
     } else {
         errorMessage('All fields are required!');
     }
@@ -57,7 +62,9 @@ const clearMessage = () => {
     document.querySelector('.alert').remove();
 };
 
+const loadEvent = () => {
 
+};
 loanForm.addEventListener('submit', (e) => {
     // show loader 
     loader.style.display = 'block';
