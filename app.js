@@ -1,15 +1,15 @@
 // UI Variables 
-const loanForm = document.querySelector('#loan-form');
-const amount = document.querySelector('#amount');
-const interest = document.querySelector('#interest');
-const years = document.querySelector('#years');
-const monthlyPayment = document.querySelector('#monthly-payment');
-const totalPayment = document.querySelector('#total-payment');
-const totalInterest = document.querySelector('#total-interest');
-const card = document.querySelector('.card');
-const heading = document.querySelector('.heading');
-const loader = document.querySelector('#loading');
-const results = document.querySelector('#results');
+const loanForm = document.querySelector('#loan-form'),
+    amount = document.querySelector('#amount'),
+    interest = document.querySelector('#interest'),
+    years = document.querySelector('#years'),
+    monthlyPayment = document.querySelector('#monthly-payment'),
+    totalPayment = document.querySelector('#total-payment'),
+    totalInterest = document.querySelector('#total-interest'),
+    card = document.querySelector('.card'),
+    heading = document.querySelector('.heading'),
+    loader = document.querySelector('#loading'),
+    results = document.querySelector('#results');
 
 
 const calculateResults = () => {
