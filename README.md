@@ -6,7 +6,7 @@ I build a `User` friendly **Loan App** using `Vanilla JavaScript`. All the funct
 
         * Arrow functions
         * Spinner
-        * Dyamic messages
+        * Dynamic messages
         * DOM
   
 ## Contributions
